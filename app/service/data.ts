@@ -1,8 +1,18 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const usersApi = createApi({
-  reducerPath: "opportunities",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://akil-backend.onrender.com" }),
+  reducerPath: "user",
+
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://akil-backend.onrender.com",
+    prepareHeaders: (headers, { getState }) => {
+      const token = localStorage.getItem("userToken");
+      if (token) {
+        headers.set("authorization", `Bearer ${token}`);
+      }
+      return headers;
+    },
+  }),
   endpoints: (builder) => ({
     // Endpoint to get all opportunities
     getAllOpportunities: builder.query({
@@ -18,7 +28,7 @@ export const usersApi = createApi({
       query: (user) => ({
         url: `/login`,
         method: "POST",
-        header: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: user,
       }),
     }),
@@ -26,7 +36,7 @@ export const usersApi = createApi({
       query: (newUser) => ({
         url: `/signup`,
         method: "POST",
-        header: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: newUser,
       }),
     }),
@@ -34,8 +44,26 @@ export const usersApi = createApi({
       query: (verifyCode) => ({
         url: `/verify-email`,
         method: "POST",
-        header: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: verifyCode,
+      }),
+    }),
+    getBookmarks: builder.query({
+      query: () => ({
+        url: "/bookmarks",
+        method: "GET",
+      }),
+    }),
+    createBookmarks: builder.mutation({
+      query: (jobId) => ({
+        url: `/bookmarks/${jobId}`,
+        method: "POST",
+      }),
+    }),
+    deleteBookmark: builder.mutation({
+      query: (jobId) => ({
+        url: `/bookmarks/${jobId}`,
+        method: "DELETE",
       }),
     }),
   }),
@@ -47,4 +75,7 @@ export const {
   useAddNewUserMutation,
   useVerifyUserMutation,
   useLogInUserMutation,
+  useGetBookmarksQuery,
+  useCreateBookmarksMutation,
+  useDeleteBookmarkMutation,
 } = usersApi;

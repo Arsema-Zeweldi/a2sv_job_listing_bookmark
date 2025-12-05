@@ -12,6 +12,7 @@ const Header = ({ num }: { num: number }) => {
   };
   const handleLogout = () => {
     localStorage.clear();
+    setInterval(() => 4000);
     router.push("/");
   };
   return (

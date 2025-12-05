@@ -1,7 +1,28 @@
 @import "tailwindcss";
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Epilogue, Arial, Helvetica, sans-serif;
+@layer base {
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    color: #25324b;
+    font-size: 32px;
+  }
+  p {
+    font-family: "Epilogue", sans-serif;
+    font-weight: 400;
+    color: #202430;
+  }
+  label {
+    font-family: "Epilogue", sans-serif;
+    font-weight: 600;
+    color: #515b6f;
+    font-size: 16px;
+  }
+  ::placeholder {
+    font-family: "Epilogue", sans-serif;
+  }
+  button {
+    font-family: "Epilogue", sans-serif;
+    font-weight: 600;
+  }
 }
