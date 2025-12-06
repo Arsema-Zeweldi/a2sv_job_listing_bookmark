@@ -1,4 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Job Bookmarking App
+
+A full-stack job listing and bookmarking web application built with **Next.js**, **React**, **Redux Toolkit (RTK Query)**, and **Spring Boot** backend. The application allows users to browse job opportunities, bookmark their favorite jobs, and manage bookmarks.
+
+---
+
+## Features
+
+- Browse job opportunities fetched from a backend API
+- Bookmark and unbookmark jobs
+- View bookmarked jobs on a separate page
+- Responsive design for desktop and mobile
+- Error handling and loading states
+- Client-side state management with Redux Toolkit
+- Integration with Spring Boot backend API
+
+---
+
+## Tech Stack
+
+- **Frontend:** Next.js, React, TypeScript, Redux Toolkit (RTK Query), React Icons
+- **Backend:** External API calls
+- **Testing:** Cypress (End-to-End), Jest
+- **Styling:** Tailwind CSS
+- **Image Handling:** Next.js Image component
 
 ## Getting Started
 
@@ -6,31 +30,16 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- HomePage (pre-login) ![HomePage](public/screenshots/home-pre.png)
 
-## Learn More
+- HomePage (post-login) ![HomePage](public/screenshots/home-post.png)
 
-To learn more about Next.js, take a look at the following resources:
+- Jest Test Result ![Jest Result](public/screenshots/jest.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Cypress Test Result ![Cypress Result](public/screenshots/jest.png)

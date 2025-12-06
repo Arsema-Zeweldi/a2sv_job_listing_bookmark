@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";

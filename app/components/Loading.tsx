@@ -1,5 +1,5 @@
+"use client";
 import React from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 // @ts-ignore: allow importing CSS without type declarations
 import "@/app/style/Loading.css";
 

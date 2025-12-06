@@ -5,11 +5,15 @@ export const usersApi = createApi({
 
   baseQuery: fetchBaseQuery({
     baseUrl: "https://akil-backend.onrender.com",
-    prepareHeaders: (headers, { getState }) => {
-      const token = localStorage.getItem("userToken");
+    prepareHeaders: (headers) => {
+      const token =
+        typeof window !== "undefined"
+          ? localStorage.getItem("userToken")
+          : null;
       if (token) {
         headers.set("authorization", `Bearer ${token}`);
       }
+
       return headers;
     },
   }),
